@@ -1,5 +1,5 @@
-matchzoo/lydev/*
-matchzoo/models/wikiqa_tune_params/*
-matchzoo/run_model.py
-matchzoo/run_model_wraper.py
-matchzoo/run_submit_gypsum_jobs_wikiqa.py
+lydev/*
+models/wikiqa_tune_params/*
+run_model.py
+run_model_wraper.py
+run_submit_gypsum_jobs_wikiqa.py
