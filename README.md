@@ -104,9 +104,9 @@ We have compared 10 models, the results are as follows.
   </tr>
   <tr>
     <td align="center", bgcolor=#eeeeee> DSSM </td>
-    <td align="center", bgcolor=#eeeeee> 0.3412 </td>
-    <td align="center", bgcolor=#eeeeee> 0.4179 </td>
-    <td align="center", bgcolor=#eeeeee> 0.3840 </td>
+    <td align="center", bgcolor=#eeeeee> 0.5439 </td>
+    <td align="center", bgcolor=#eeeeee> 0.6134 </td>
+    <td align="center", bgcolor=#eeeeee> 0.5647 </td>
   </tr>
   <tr>
   	 <td align="center", bgcolor=#eeeeee> CDSSM </td>
@@ -171,7 +171,7 @@ The loss of each models are described in the following figure,
 
 The MAP of each models are depicted in the following figure,
 <div align='center'>
-<img src="./docs/_static_images/matchzoo.wikiqa.map.png" width = "550" alt="图片名称" align=center />
+<img src="./docs/_static/images/matchzoo.wikiqa.map.png" width = "550" alt="图片名称" align=center />
 </div>
 Here, the DRMM_TKS is a variant of DRMM for short text matching. Specifically, the matching histogram is replaced by a top-k maxpooling layer and the remaining part are fixed. 
 
@@ -182,7 +182,7 @@ Here, the DRMM_TKS is a variant of DRMM for short text matching. Specifically, t
 this model is an implementation of <a href="http://www.bigdatalab.ac.cn/~gjf/papers/2016/CIKM2016a_guo.pdf">A Deep Relevance Matching Model for Ad-hoc Retrieval</a>.
 
 - model file: models/drmm.py
-- config file: models/drmm_ranking.config
+- model config: models/drmm_ranking.config
 
 ---
 2. MatchPyramid
@@ -190,7 +190,7 @@ this model is an implementation of <a href="http://www.bigdatalab.ac.cn/~gjf/pap
 this model is an implementation of <a href="https://arxiv.org/abs/1602.06359"> Text Matching as Image Recognition</a>
 
 - model file: models/matchpyramid.py
-- config file: models/matchpyramid_ranking.config
+- model config: models/matchpyramid_ranking.config
 
 ---
 3. ARC-I
@@ -206,7 +206,7 @@ this model is an implementation of <a href="https://arxiv.org/abs/1503.03244">Co
 this model is an implementation of <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/cikm2013_DSSM_fullversion.pdf">Learning Deep Structured Semantic Models for Web Search using Clickthrough Data</a>
 
 - model file: models/dssm.py
-- config file: models/dssm_ranking.config
+- model config: models/dssm_ranking.config
 
 ---
 5. CDSSM
@@ -214,7 +214,7 @@ this model is an implementation of <a href="https://www.microsoft.com/en-us/rese
 this model is an implementation of <a href="https://www.microsoft.com/en-us/research/publication/learning-semantic-representations-using-convolutional-neural-networks-for-web-search/">Learning Semantic Representations Using Convolutional Neural Networks for Web Search</a>
 
 - model file: models/cdssm.py
-- config file: models/cdssm_ranking.config
+- model config: models/cdssm_ranking.config
 
 ---
 6. ARC-II
@@ -302,6 +302,9 @@ We would like to express our appreciation to the following people for contributi
 Feedback and Join Us
 =====
 Feel free to post any questions or suggestions on [GitHub Issues](https://github.com/faneshion/MatchZoo/issues) and we will reply to your questions there. You can also suggest adding new deep text maching models into MatchZoo and apply for joining us to develop MatchZoo together.
+
+Update in 12/10/2017: We have applied another WeChat ID: CLJ_Keep. Anyone who want to join the WeChat group can add this WeChat id as a friend. Please tell us your name, company or school, city when you send such requests. After you added "CLJ_Keep" as one of your WeChat friends, she will invite you to join the MatchZoo WeChat group. "CLJ_Keep" is one member of the MatchZoo team.
+
 <div align='center'>
 <img src="./docs/_static/images/matchzoo-group.jpeg" width = "200"  alt="图片名称" align=center />
 </div>

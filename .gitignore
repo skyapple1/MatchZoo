@@ -1,5 +1,4 @@
 *.pyc
-*.txt
 *.log
 *.swp
 *.bak
@@ -7,9 +6,11 @@
 *.trec
 *.ranklist
 *.DS_Store
+predict.*
 build/
 dist/
 log/*
 matchzoo/log/*
+matchzoo/querydecision/
 log/*
 .idea/
