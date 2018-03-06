@@ -1,11 +1,12 @@
 # -*- coding=utf-8 -*-
+from __future__ import print_function
+from __future__ import absolute_import
 import keras
 import keras.backend as K
 from keras.models import Sequential, Model
 from keras.layers import *
-from keras.layers import Input, Embedding, Dense, Activation, Lambda, Dot
+from keras.initializers import Constant, RandomNormal, RandomUniform
 from keras.activations import softmax
-from keras.initializers import Constant, RandomNormal
 from model import BasicModel
 from utils.utility import *
 
@@ -18,7 +19,7 @@ class KNRM(BasicModel):
         self.setup(config)
         if not self.check():
             raise TypeError('[KNRM] parameter check wrong')
-        print '[KNRM] init done'
+        print('[KNRM] init done')
 
     def setup(self, config):
         self.set_default('kernel_num', 11)
@@ -38,9 +39,7 @@ class KNRM(BasicModel):
         show_layer_info('Input', query)
         doc = Input(name='doc', shape=(self.config['text2_maxlen'],))
         show_layer_info('Input', doc)
-
         embedding = Embedding(self.config['vocab_size'], self.config['embed_size'], weights=[self.config['embed']], trainable=self.config['train_embed'])
-
         q_embed = embedding(query)
         show_layer_info('Embedding', q_embed)
         d_embed = embedding(doc)
@@ -65,13 +64,12 @@ class KNRM(BasicModel):
             show_layer_info('Sum of all exponent', mm_sum)
             KM.append(mm_sum)
 
-
         Phi = Lambda(lambda x: K.tf.stack(x, 1))(KM)
         show_layer_info('Stack', Phi)
         if self.config['target_mode'] == 'classification':
-            out_ = Dense(2, activation='softmax', kernel_initializer=initializers.RandomUniform(minval=-0.014, maxval=0.014), bias_initializer='zeros')(Phi)
+            out_ = Dense(2, activation='softmax', kernel_initializer=RandomUniform(minval=-0.014, maxval=0.014), bias_initializer='zeros')(Phi)
         elif self.config['target_mode'] in ['regression', 'ranking']:
-            out_ = Dense(1, kernel_initializer=initializers.RandomUniform(minval=-0.014, maxval=0.014), bias_initializer='zeros')(Phi)
+            out_ = Dense(1, kernel_initializer=RandomUniform(minval=-0.014, maxval=0.014), bias_initializer='zeros')(Phi)
         show_layer_info('Dense', out_)
 
         model = Model(inputs=[query, doc], outputs=[out_])
