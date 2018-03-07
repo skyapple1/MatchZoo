@@ -4,3 +4,4 @@ run_model.py
 run_model_wraper.py
 run_submit_gypsum_jobs_wikiqa.py
 run_submit_gypsum_jobs_quora_qp.py
+*.config

@@ -31,7 +31,7 @@ class ANMM(BasicModel):
             raise TypeError('parameter config should be dict:', config)
 
         self.set_default('text1_maxlen', 10)
-        self.set_default('hist_size', 60)
+        self.set_default('bin_num', 20)
         self.set_default('dropout_rate', 0.)
         self.config.update(config)
 
