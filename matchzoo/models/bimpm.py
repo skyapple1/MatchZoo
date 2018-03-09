@@ -30,7 +30,7 @@ class BiMPM(BasicModel):
         self.setup(config)
         if not self.check():
             raise TypeError('[BiMPM] parameter check wrong')
-        print('[MatchPyramid] init done', end='\n')
+        print('[BiMPM] init done', end='\n')
 
     def setup(self, config):
         if not isinstance(config, dict):
